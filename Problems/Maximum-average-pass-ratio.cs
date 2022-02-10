@@ -8,43 +8,78 @@ namespace CodingPractice.Problems
 {
     internal class Maximum_average_pass_ratio
     {
-
-        // class Solution
-        //        {
-        // 2public:
-        // 3    double diff(int a, int b)
-        //            {
-        //                4        return (double)(a + 1) / (b + 1) - (double)a / b;
-        //                5    }
-        // 6    double maxAverageRatio(vector<vector<int>>& classes, int extraStudents)
-        //            {
-        //                7        auto cmp = [&](const pair<int, int>&a, const pair<int, int>&b) { return diff(a.first, a.second) < diff(b.first, b.second); };
-        //                8        priority_queue < pair<int, int>, vector<pair<int, int>>, decltype(cmp) > pq(cmp);
-        //                9        for (auto c : classes)
-        //                {
-        //                    10            pq.push({ c[0], c[1]});
-        //                11        }
-        //12        for (int i=0; i<extraStudents; i++) {
-        //13            auto[p, t] = pq.top(); pq.pop();
-        //14            pq.push({p+1, t+1});
-        //15        }
-        //16        double ans = 0;
-        //17        while (pq.size()) {
-        //18            auto p = pq.top(); pq.pop();
-        //19            ans += (double) p.first/p.second;
-        //20        }
-        //21        return ans / classes.size();
-        //22    }
-        //23};
-        //    }
-
         public double MaxAverageRatio(int[][] classes, int extraStudents)
         {
-            
+            List<Node> tempnodes = new List<Node>();
 
+            foreach (var cl in classes)
+            {
+                Node node = new Node(); ;
+                node.PassStudents = cl[0];
+                node.TotalStudents = cl[1];
 
-            return double.MinValue;
+                double val = ((double)(cl[0] + 1) / (cl[1] + 1));
+                double val2 = ((double)cl[0] / cl[1]);
+
+                node.Difference = val - val2;
+                tempnodes.Add(node);
+            }
+            var maxRatio = tempnodes.OrderByDescending(a => a.Difference).Select(a => a.Difference).FirstOrDefault();
+            foreach (var node in tempnodes)
+            {
+                if (node.Difference == maxRatio)
+                {
+                    node.PassStudents++;
+                    node.TotalStudents++;
+                    break;
+                }
+            }
+
+            for (int i = 1; i < extraStudents; i++)
+            {
+                foreach (var cl in tempnodes)
+                {
+                    double val = ((double)(cl.PassStudents + 1) / (cl.TotalStudents + 1));
+                    double val2 = ((double)cl.PassStudents / cl.TotalStudents);
+                    cl.Difference = val - val2;
+                }
+
+                if (tempnodes.Any())
+                {
+                    var maxRatioTemp = tempnodes.OrderByDescending(a => a.Difference).Select(a => a.Difference).FirstOrDefault();
+
+                    foreach (var node in tempnodes)
+                    {
+                        if (node.Difference == maxRatioTemp)
+                        {
+                            node.PassStudents++;
+                            node.TotalStudents++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            double ratio = 0;
+
+            foreach (var cl in tempnodes)
+            {
+                double val2 = ((double)cl.PassStudents / cl.TotalStudents);
+                ratio += val2;
+            }
+
+            return ratio / tempnodes.Count();
         }
+
+    }
+
+    public class Node
+    {
+        public double Difference { get; set; }
+
+        public int PassStudents { get; set; }
+
+        public int TotalStudents { get; set; }
 
     }
 }
