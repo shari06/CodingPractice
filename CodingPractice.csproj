@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Problems\AmazonSearch.cs" />
     <Compile Include="Problems\Maximum-units-on-a-truck.cs" />
+    <Compile Include="Problems\Slowest-key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
