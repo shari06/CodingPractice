@@ -12,7 +12,8 @@ namespace CodingPractice
         static void Main(string[] args)
         {
 
-            Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio");
+            Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio " +
+                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60");
             var keyValue = Console.ReadLine();
 
             if (keyValue == "1")
@@ -53,6 +54,11 @@ namespace CodingPractice
                                 new int[] { 2, 2 }};
                 Maximum_average_pass_ratio maximum_Average_Pass_Ratio = new Maximum_average_pass_ratio();
                 maximum_Average_Pass_Ratio.MaxAverageRatio(stdList, 2);
+            }
+            else if (keyValue == "5")
+            {
+                Pairs_of_songs_with_total_durations_divisible_by_60 maximum_Average_Pass_Ratio = new Pairs_of_songs_with_total_durations_divisible_by_60();
+                maximum_Average_Pass_Ratio.NumPairsDivisibleBy60(new int[] { 60, 60, 60 });
             }
         }
     }
