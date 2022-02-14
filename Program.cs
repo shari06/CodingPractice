@@ -13,7 +13,7 @@ namespace CodingPractice
         {
 
             Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio " +
-                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60");
+                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum");
             var keyValue = Console.ReadLine();
 
             if (keyValue == "1")
@@ -59,6 +59,11 @@ namespace CodingPractice
             {
                 Pairs_of_songs_with_total_durations_divisible_by_60 maximum_Average_Pass_Ratio = new Pairs_of_songs_with_total_durations_divisible_by_60();
                 maximum_Average_Pass_Ratio.NumPairsDivisibleBy60(new int[] { 60, 60, 60 });
+            }
+            else if (keyValue == "6")
+            {
+                Two_sum two_Sum = new Two_sum();
+                two_Sum.TwoSum(new int[] { 2, 7, 11, 15 },9);
             }
         }
     }
