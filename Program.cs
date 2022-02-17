@@ -14,7 +14,7 @@ namespace CodingPractice
 
             Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio " +
                 "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum \n 7 Cost of Connecting Ropes \n 8 Add two linked list" +
-                "\n 9 Median for Sorted Array");
+                "\n 9 Median for Sorted Array \n 10 for Longest Palindrome");
             var keyValue = Console.ReadLine();
 
             if (keyValue == "1")
@@ -80,6 +80,12 @@ namespace CodingPractice
             {
                 MedianofArray medianofArray = new MedianofArray();
                 medianofArray.FindMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 });
+            }
+            else if (keyValue == "10")
+            {
+                Longest_Palindrome longest_Palindrome = new Longest_Palindrome();
+                longest_Palindrome.LongestPalindrome("babad");
+
             }
         }
     }
