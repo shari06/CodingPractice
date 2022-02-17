@@ -50,6 +50,7 @@
     <Compile Include="Problems\ConnectingRopes.cs" />
     <Compile Include="Problems\Maximum-average-pass-ratio.cs" />
     <Compile Include="Problems\Maximum-units-on-a-truck.cs" />
+    <Compile Include="Problems\MedianofArray.cs" />
     <Compile Include="Problems\Pairs-of-songs-with-total-durations-divisible-by-60.cs" />
     <Compile Include="Problems\Slowest-key.cs" />
     <Compile Include="Problems\Two-sum.cs" />

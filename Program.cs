@@ -13,7 +13,8 @@ namespace CodingPractice
         {
 
             Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio " +
-                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum \n 7 Cost of Connecting Ropes \n 8 Add two linked list");
+                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum \n 7 Cost of Connecting Ropes \n 8 Add two linked list" +
+                "\n 9 Median for Sorted Array");
             var keyValue = Console.ReadLine();
 
             if (keyValue == "1")
@@ -63,7 +64,7 @@ namespace CodingPractice
             else if (keyValue == "6")
             {
                 Two_sum two_Sum = new Two_sum();
-                two_Sum.TwoSum(new int[] { 2, 7, 11, 15 },9);
+                two_Sum.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
             }
             else if (keyValue == "7")
             {
@@ -74,6 +75,11 @@ namespace CodingPractice
             {
                 AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
                 addTwoNumbers.CreatInput();
+            }
+            else if (keyValue == "9")
+            {
+                MedianofArray medianofArray = new MedianofArray();
+                medianofArray.FindMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 });
             }
         }
     }
