@@ -13,7 +13,7 @@ namespace CodingPractice
         {
 
             Console.WriteLine(" Problems \n 1 for Truck Size \n 2 for Amazon Search \n 3 for Slowest key \n 4 for Maximum pass average ratio " +
-                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum");
+                "\n 5 Pairs_of_songs_with_total_durations_divisible_by_60 \n 6 Two Sum \n 7 Cost of Connecting Ropes \n 8 Add two linked list");
             var keyValue = Console.ReadLine();
 
             if (keyValue == "1")
@@ -64,6 +64,16 @@ namespace CodingPractice
             {
                 Two_sum two_Sum = new Two_sum();
                 two_Sum.TwoSum(new int[] { 2, 7, 11, 15 },9);
+            }
+            else if (keyValue == "7")
+            {
+                ConnectingRopes connectingRopes = new ConnectingRopes();
+                Console.WriteLine(connectingRopes.TotalCost(new int[] { 4, 3, 2, 6 }));
+            }
+            else if (keyValue == "8")
+            {
+                AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+                addTwoNumbers.CreatInput();
             }
         }
     }
