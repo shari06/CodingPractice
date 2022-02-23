@@ -26,6 +26,7 @@ namespace CodingPractice.Problems
                 result = vs[median];
             }
             return result;
+
         }
     }
 }
