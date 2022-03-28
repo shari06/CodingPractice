@@ -8,8 +8,6 @@ namespace CodingPractice.Problems
 {
     public class ConnectingRopes
     {
-
-
         public int TotalCost(int[] arr)
         {
             List<int> list = new List<int>();

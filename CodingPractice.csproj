@@ -48,6 +48,7 @@
     <Compile Include="Problems\AddTwoNumbers.cs" />
     <Compile Include="Problems\AmazonSearch.cs" />
     <Compile Include="Problems\ConnectingRopes.cs" />
+    <Compile Include="Problems\ContainsDuplicate.cs" />
     <Compile Include="Problems\Longest_Palindrome.cs" />
     <Compile Include="Problems\Maximum-average-pass-ratio.cs" />
     <Compile Include="Problems\Maximum-units-on-a-truck.cs" />
